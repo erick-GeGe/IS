@@ -11,11 +11,12 @@ Para iniciar puedes descargar el proyecto y ubicarlo en una carpeta de tu prefer
 Tecnologia usadas en el proyecto
 
 ```
-[django](https://www.djangoproject.com/download/) - El framework web usado.
+Python3
+Pip
+Django
+Postgres
 ```
-...
-[Postgres]{https://www.postgresql.org/download/} - Almacenamiento de datos
-...
+
 
 
 
