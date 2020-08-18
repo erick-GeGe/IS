@@ -32,6 +32,7 @@ Es proposito fundamental de proyecto es poder poner al alcance de todos una apli
 <html lang="en">
 
 <head>
+    <!-- Cargar carpeta con django -->
     {% load static %}
 
     <!-- Required meta tags -->
