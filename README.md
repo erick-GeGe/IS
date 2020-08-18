@@ -146,9 +146,48 @@ class Doctor(models.Model):
 
 ## Principios SOLID usados
 
-### 1
-### 2
-### 3
+### S — Single Responsibility
+Admin se encarga de las responsabilidades del administrador
+```
+from django.contrib import admin
+from farmaciaApp import models
+
+admin.site.register(models.Persona)
+```
+
+Views se encarga unicamente de las vistas
+```
+from django.shortcuts import render, HttpResponse
+
+def home(reques):
+    return render(reques,"home.html")
+```
+
+etc, etc
+### O — Open-Closed
+```
+class Persona(models.Model):
+    dni = models.CharField(max_length=8, primary_key=True, null=False)
+    nombre = models.CharField(max_length=20, null=False)
+    apellido_paterno = models.CharField(max_length=20, null=False)
+    apellido_materno = models.CharField(max_length=20, null=False)
+    celular = models.CharField(max_length=9, null=False)
+```
+### D — Dependency Inversion
+```
+from farmaciaApp import models
+
+admin.site.register(models.Persona)
+admin.site.register(models.Doctor)
+admin.site.register(models.Usuario)
+admin.site.register(models.Trabajador)
+admin.site.register(models.Sala_virtual)
+admin.site.register(models.Historia)
+admin.site.register(models.Cita)
+admin.site.register(models.Medicamento)
+admin.site.register(models.Receta)
+admin.site.register(models.Linea_receta)
+```
 
 ## Principios DDD
 
