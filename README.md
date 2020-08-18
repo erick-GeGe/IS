@@ -40,6 +40,8 @@ Django sera el encargado de tomar el papel del controlador
 La vista decide que informacion vamos a mostrar y en que template
 
 ```
+#Archivo views
+
 from django.shortcuts import render, HttpResponse
 
 def home(reques):
