@@ -31,10 +31,28 @@ Los estilos de programacion usados son los siguientes:
 ### Trinity
 
 #### Modelo 
-Es la base de datos en este caso Postgres
+Almacenamiento de datos
+```
+# Fragmento de archivo models
+
+from django.db import models
+
+class Persona(models.Model):
+    dni = models.CharField(max_length=8, primary_key=True, null=False)
+    nombre = models.CharField(max_length=20, null=False)
+    apellido_paterno = models.CharField(max_length=20, null=False)
+    apellido_materno = models.CharField(max_length=20, null=False)
+    celular = models.CharField(max_length=9, null=False)
+```
 
 #### Controlador
-Django sera el encargado de tomar el papel del controlador
+Control de los datos
+
+```
+from farmaciaApp.models import Personsa
+
+personas = Persona.objects.all()
+```
 
 #### Vista Template
 La vista decide que informacion vamos a mostrar y en que template
