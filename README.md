@@ -26,7 +26,7 @@ Postgres
 
 Los estilos de programacion usados son los siguientes:
 
-### Things
+### 1. Things
 Division del problema en partes mas pequeñas:
 Urls
 
@@ -67,7 +67,7 @@ admin.site.register(models.Usuario)
 Models, etc ....
 
 
-### Trinity
+### 2. Trinity
 
 #### Modelo 
 Almacenamiento de datos
@@ -124,7 +124,7 @@ def solicitar_atencion_fisica(reques):
 
 
 
-### Persistent Tables
+### 3. Persistent Tables
 Por el almacenamiento de los datos
 
 ```
@@ -146,4 +146,12 @@ class Doctor(models.Model):
 
 ## Principios SOLID usados
 
+### 1
+### 2
+### 3
+
 ## Principios DDD
+
+### 1
+### 2
+### 3
