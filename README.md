@@ -27,6 +27,45 @@ Postgres
 Los estilos de programacion usados son los siguientes:
 
 ### Things
+Division del problema en partes mas pequeñas:
+Urls
+
+```
+from django.urls import path
+from farmaciaApp import views
+
+urlpatterns = [
+    path('', views.home),
+    path('emergencia_medica', views.emergencia_medica),
+    path('recibir_atencion_medica', views.recibir_atencion_medica),
+    path('recibir_receta', views.recibir_receta),
+    path('reservar_cita', views.reservar_cita),
+    path('solicitar_atencion_fisica', views.solicitar_atencion_fisica),
+]
+
+```
+Views
+```
+from django.shortcuts import render, HttpResponse
+
+def home(reques):
+    return render(reques,"home.html")
+
+def emergencia_medica(reques):
+    return render(reques,"emergencia_medica.html")
+```
+Admin
+```
+from django.contrib import admin
+from farmaciaApp import models
+
+admin.site.register(models.Persona)
+admin.site.register(models.Doctor)
+admin.site.register(models.Usuario)
+```
+
+Models, etc ....
+
 
 ### Trinity
 
@@ -85,7 +124,25 @@ def solicitar_atencion_fisica(reques):
 
 
 
-### Nose
+### Persistent Tables
+Por el almacenamiento de los datos
+
+```
+class Persona(models.Model):
+    dni = models.CharField(max_length=8, primary_key=True, null=False)
+    nombre = models.CharField(max_length=20, null=False)
+    apellido_paterno = models.CharField(max_length=20, null=False)
+    apellido_materno = models.CharField(max_length=20, null=False)
+    celular = models.CharField(max_length=9, null=False)
+
+class Doctor(models.Model):
+    codigo_doctor = models.CharField(max_length=8, primary_key=True, null=False)
+    dni_doctor = models.ForeignKey(Persona, on_delete=models.CASCADE, null=False)
+    especialidad = models.CharField(max_length=20, null=False)
+    salario = models.DecimalField(max_digits=6, decimal_places=2, null=False)
+    horario_entrada = models.TimeField( null=False)
+    horario_salida = models.TimeField( null=False)
+```
 
 ## Principios SOLID usados
 
