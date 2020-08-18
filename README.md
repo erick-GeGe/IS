@@ -165,7 +165,10 @@ def home(reques):
 
 etc, etc
 ### O — Open-Closed
+La clase models.Model puede ser extendida agregando nuevas funciones pero no puede ser modificada
 ```
+from django.db import models
+
 class Persona(models.Model):
     dni = models.CharField(max_length=8, primary_key=True, null=False)
     nombre = models.CharField(max_length=20, null=False)
@@ -174,7 +177,9 @@ class Persona(models.Model):
     celular = models.CharField(max_length=9, null=False)
 ```
 ### D — Dependency Inversion
+A la clase admin se le puede agregar cualquier clase de modelo para poder gestionarlo desde el administrador
 ```
+from django.contrib import admin
 from farmaciaApp import models
 
 admin.site.register(models.Persona)
