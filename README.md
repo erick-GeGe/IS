@@ -144,7 +144,7 @@ class Doctor(models.Model):
     horario_salida = models.TimeField( null=False)
 ```
 
-## Principios SOLID usados
+## Principios SOLID
 
 ### S — Single Responsibility
 Admin se encarga de las responsabilidades del administrador
